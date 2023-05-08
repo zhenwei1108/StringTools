@@ -20,6 +20,11 @@ public class StringTools {
     return data == null || data.length() == 0;
   }
 
+
+  public static boolean isNotEmpty(String data) {
+    return !isEmpty(data);
+  }
+
   /**
    * @author zhangzhenwei
    * @description isBlank
@@ -32,6 +37,11 @@ public class StringTools {
   public static boolean isBlank(String data) {
     return data == null || data.trim().length() == 0;
   }
+
+  public static boolean isNotBlank(String data) {
+    return !isBlank(data);
+  }
+
 
   public static String append(String source, String data) {
     return source + data;
