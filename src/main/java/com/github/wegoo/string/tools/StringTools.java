@@ -1,4 +1,4 @@
-package com.github.zhenwei.string.tools;
+package com.github.wegoo.string.tools;
 
 /**
  * @author: zhangzhenwei
