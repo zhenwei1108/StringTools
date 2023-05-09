@@ -5,8 +5,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.wegoo</groupId>
-  <artifactId>string-tools</artifactId>
+  <artifactId>wegoo-tools</artifactId>
   <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>ByteTools</module>
+    <module>StringTools</module>
+  </modules>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
@@ -29,7 +34,7 @@
     <repository>
       <id>github</id>
       <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/zhenwei1108/StringTools</url>
+      <url>https://maven.pkg.github.com/zhenwei1108/wegoo-tools</url>
     </repository>
   </distributionManagement>
 
