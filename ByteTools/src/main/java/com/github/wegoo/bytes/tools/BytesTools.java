@@ -1,7 +1,5 @@
 package com.github.wegoo.bytes.tools;
 
-import java.lang.reflect.Array;
-
 /**
  * @author: zhangzhenwei
  * @description:
@@ -31,5 +29,41 @@ public class BytesTools {
     return result;
   }
 
+
+  /**
+   * @author zhangzhenwei
+   * @description splitPrefix 从前面 截取 指定长度
+   * @param [data, length]
+   * @return byte[]
+   * @date 2023/7/9  13:30
+   * @since: 1.0.0 
+   */
+  public static byte[] splitPrefix(byte[] data, int length) {
+    if (data == null || data.length < length) {
+      return new byte[0];
+    }
+    byte[] result = new byte[length];
+    System.arraycopy(data, 0, result, 0, length);
+    return result;
+  }
+
+  /**
+   * @author zhangzhenwei
+   * @description splitSuffix 从后面截取指定长度 
+   * @param [data, length]
+   * @return byte[]
+   * @date 2023/7/9  13:30
+   * @since: 1.0.0 
+   */
+  public static byte[] splitSuffix(byte[] data, int length) {
+    if (data == null || data.length < length) {
+      return new byte[0];
+    }
+    byte[] result = new byte[length];
+    System.arraycopy(data, data.length-length, result, 0, length);
+    return result;
+  }
+  
+  
 
 }
