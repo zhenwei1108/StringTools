@@ -9,6 +9,6 @@
   </parent>
 
   <artifactId>StringTools</artifactId>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
 </project>
