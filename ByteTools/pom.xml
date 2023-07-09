@@ -8,6 +8,7 @@
     <version>1.0.0</version>
   </parent>
 
+  <version>1.0.1</version>
   <artifactId>ByteTools</artifactId>
   <packaging>pom</packaging>
 </project>

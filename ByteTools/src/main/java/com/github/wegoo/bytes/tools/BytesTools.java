@@ -36,7 +36,7 @@ public class BytesTools {
    * @param [data, length]
    * @return byte[]
    * @date 2023/7/9  13:30
-   * @since: 1.0.0 
+   * @since: 1.0.1
    */
   public static byte[] splitPrefix(byte[] data, int length) {
     if (data == null || data.length < length) {
@@ -53,7 +53,7 @@ public class BytesTools {
    * @param [data, length]
    * @return byte[]
    * @date 2023/7/9  13:30
-   * @since: 1.0.0 
+   * @since: 1.0.1
    */
   public static byte[] splitSuffix(byte[] data, int length) {
     if (data == null || data.length < length) {
