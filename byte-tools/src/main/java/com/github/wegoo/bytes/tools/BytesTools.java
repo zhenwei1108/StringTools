@@ -1,5 +1,8 @@
 package com.github.wegoo.bytes.tools;
 
+import java.nio.ByteBuffer;
+import sun.security.util.ByteArrays;
+
 /**
  * @author: zhangzhenwei
  * @description:
@@ -64,6 +67,66 @@ public class BytesTools {
     return result;
   }
   
-  
+
+  /**
+   * @author zhangzhenwei
+   * @description bytesToInt 字节数组转 数字
+   * @param [data]
+   * @return int
+   * @date 2023/7/10  10:07
+   * @since: 1.0.0
+   */
+  public static int bytesToInt(byte[] data){
+    return ByteBuffer.wrap(data).getInt();
+  }
+
+  /**
+   * @author zhangzhenwei
+   * @description intToBytes 数字转字节数组
+   * @param [data]
+   * @return byte[]
+   * @date 2023/7/10  10:08
+   * @since: 1.0.0
+   */
+  public static byte[] intToBytes(int data){
+    return ByteBuffer.allocate(4).putInt(data).array();
+  }
+
+  /**
+   * @author zhangzhenwei
+   * @description bytesToLong
+   * 字节数组转长数
+   * @param [data]
+   * @return long
+   * @date 2023/7/10  10:08
+   * @since: 1.0.0
+   */
+  public static long bytesToLong(byte[] data){
+    return ByteBuffer.wrap(data).getLong();
+  }
+
+  /**
+   * @author zhangzhenwei
+   * @description longToBytes 长数转字节数组
+   * @param [data]
+   * @return byte[]
+   * @date 2023/7/10  10:08
+   * @since: 1.0.0
+   */
+  public static byte[] longToBytes(long data){
+    return ByteBuffer.allocate(8).putLong(data).array();
+  }
+
+  /**
+   * @author zhangzhenwei
+   * @description isEquals 比对两个字节数组是否一致
+   * @param [source, target]
+   * @return boolean
+   * @date 2023/7/10  10:22
+   * @since: 1.0.0
+   */
+  public static boolean isEquals(byte[] source, byte[] target){
+    return ByteArrays.isEqual(source,0,source.length, target,0, target.length);
+  }
 
 }
