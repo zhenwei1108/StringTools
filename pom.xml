@@ -6,14 +6,16 @@
 
   <groupId>com.github.wegoo</groupId>
   <artifactId>wegoo-tools</artifactId>
-  <version>1.0.0</version>
+  <version>${project.version}</version>
   <packaging>pom</packaging>
+
   <modules>
-    <module>ByteTools</module>
-    <module>StringTools</module>
+    <module>string-tools</module>
+    <module>byte-tools</module>
   </modules>
 
   <properties>
+    <project.version>1.0.0</project.version>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
