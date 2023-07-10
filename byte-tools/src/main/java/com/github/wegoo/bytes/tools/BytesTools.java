@@ -1,6 +1,7 @@
 package com.github.wegoo.bytes.tools;
 
 import java.nio.ByteBuffer;
+import java.util.Base64;
 import sun.security.util.ByteArrays;
 
 /**
@@ -34,10 +35,10 @@ public class BytesTools {
 
 
   /**
-   * @author zhangzhenwei
-   * @description splitPrefix 从前面 截取 指定长度
    * @param [data, length]
    * @return byte[]
+   * @author zhangzhenwei
+   * @description splitPrefix 从前面 截取 指定长度
    * @date 2023/7/9  13:30
    * @since: 1.0.1
    */
@@ -51,10 +52,10 @@ public class BytesTools {
   }
 
   /**
-   * @author zhangzhenwei
-   * @description splitSuffix 从后面截取指定长度 
    * @param [data, length]
    * @return byte[]
+   * @author zhangzhenwei
+   * @description splitSuffix 从后面截取指定长度
    * @date 2023/7/9  13:30
    * @since: 1.0.1
    */
@@ -63,70 +64,170 @@ public class BytesTools {
       return new byte[0];
     }
     byte[] result = new byte[length];
-    System.arraycopy(data, data.length-length, result, 0, length);
+    System.arraycopy(data, data.length - length, result, 0, length);
     return result;
   }
-  
+
+
+  public static byte[] split(byte[] data, int from, int length) {
+    if (data == null || from + length > data.length) {
+      throw new RuntimeException("input params error");
+    }
+    byte[] result = new byte[length];
+    System.arraycopy(data, from, result, 0, length);
+    return result;
+  }
+
 
   /**
-   * @author zhangzhenwei
-   * @description bytesToInt 字节数组转 数字
    * @param [data]
    * @return int
+   * @author zhangzhenwei
+   * @description bytesToInt 字节数组转 数字
    * @date 2023/7/10  10:07
    * @since: 1.0.0
    */
-  public static int bytesToInt(byte[] data){
+  public static int bytesToInt(byte[] data) {
     return ByteBuffer.wrap(data).getInt();
   }
 
   /**
-   * @author zhangzhenwei
-   * @description intToBytes 数字转字节数组
    * @param [data]
    * @return byte[]
+   * @author zhangzhenwei
+   * @description intToBytes 数字转字节数组
    * @date 2023/7/10  10:08
    * @since: 1.0.0
    */
-  public static byte[] intToBytes(int data){
+  public static byte[] intToBytes(int data) {
     return ByteBuffer.allocate(4).putInt(data).array();
   }
 
   /**
-   * @author zhangzhenwei
-   * @description bytesToLong
-   * 字节数组转长数
    * @param [data]
    * @return long
+   * @author zhangzhenwei
+   * @description bytesToLong 字节数组转长数
    * @date 2023/7/10  10:08
    * @since: 1.0.0
    */
-  public static long bytesToLong(byte[] data){
+  public static long bytesToLong(byte[] data) {
     return ByteBuffer.wrap(data).getLong();
   }
 
   /**
-   * @author zhangzhenwei
-   * @description longToBytes 长数转字节数组
    * @param [data]
    * @return byte[]
+   * @author zhangzhenwei
+   * @description longToBytes 长数转字节数组
    * @date 2023/7/10  10:08
    * @since: 1.0.0
    */
-  public static byte[] longToBytes(long data){
+  public static byte[] longToBytes(long data) {
     return ByteBuffer.allocate(8).putLong(data).array();
   }
 
   /**
-   * @author zhangzhenwei
-   * @description isEquals 比对两个字节数组是否一致
    * @param [source, target]
    * @return boolean
+   * @author zhangzhenwei
+   * @description isEquals 比对两个字节数组是否一致
    * @date 2023/7/10  10:22
    * @since: 1.0.0
    */
-  public static boolean isEquals(byte[] source, byte[] target){
-    return ByteArrays.isEqual(source,0,source.length, target,0, target.length);
+  public static boolean isEquals(byte[] source, byte[] target) {
+    return ByteArrays.isEqual(source, 0, source.length, target, 0, target.length);
   }
+
+  /**
+   * @param [data]
+   * @return java.lang.String
+   * @author zhangzhenwei
+   * @description bytesToHex 字节数组转hex字符串
+   * @date 2023/7/10  11:17
+   * @since: 1.0.0
+   */
+  public static String bytesToHex(byte[] data) {
+    StringBuffer sb = new StringBuffer();
+    for (byte datum : data) {
+      String hex = Integer.toHexString(datum & 0xFF);
+      if (hex.length() < 2) {
+        sb.append(0);
+      }
+      sb.append(hex);
+    }
+    return sb.toString();
+  }
+
+  /**
+   * @param [inHex]
+   * @return byte[]
+   * @author zhangzhenwei
+   * @description hexToBytes hex字符串转byte数组
+   * @date 2023/7/10  11:16
+   * @since: 1.0.0
+   */
+  public static byte[] hexToBytes(String inHex) {
+    int hexlen = inHex.length();
+    byte[] result;
+    if (hexlen % 2 == 1) {
+      //奇数
+      hexlen++;
+      result = new byte[(hexlen / 2)];
+      inHex = "0" + inHex;
+    } else {
+      //偶数
+      result = new byte[(hexlen / 2)];
+    }
+    int j = 0;
+    for (int i = 0; i < hexlen; i += 2) {
+      result[j] = (byte) Integer.parseInt((inHex.substring(i, i + 2)), 16);
+      j++;
+    }
+    return result;
+  }
+
+  /**
+   * @param [data]
+   * @return java.lang.String
+   * @author zhangzhenwei
+   * @description bytesToBase64String 字节数组转base64
+   * @date 2023/7/10  11:23
+   * @since: 1.0.0
+   */
+  public static String bytesToBase64String(byte[] data) {
+    return Base64.getEncoder().encodeToString(data);
+  }
+
+  /**
+   * @param [data]
+   * @return byte[]
+   * @author zhangzhenwei
+   * @description base64StringToBytes base64转字节数组
+   * @date 2023/7/10  11:23
+   * @since: 1.0.0
+   */
+  public static byte[] base64StringToBytes(String data) {
+    return Base64.getDecoder().decode(data);
+  }
+
+  /**
+   * @param [data]
+   * @return boolean
+   * @author zhangzhenwei
+   * @description isBase64 判断是否为base64编码 尝试解码，若解码失败，则认为非base64
+   * @date 2023/7/10  13:19
+   * @since: 1.0.0
+   */
+  public static boolean isBase64(String data) {
+    boolean result = false;
+    try {
+      Base64.getDecoder().decode(data);
+      result = true;
+    } catch (Exception ignore) {
+    }
+    return result;
+  }
+
 
 }
