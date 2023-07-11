@@ -80,6 +80,26 @@ public class BytesTools {
 
 
   /**
+   * @param [data, targetLength, copyLength]
+   *       待处理数据， 目标数组长度， 拷贝字节数量
+   * @return byte[]
+   * @author zhangzhenwei
+   * @description copyTo 将数字转换为指定长度
+   * @date 2023/7/10  17:48
+   * @since: 1.0.0
+   */
+  public static byte[] copyTo(byte[] data, int targetLength, int copyLength) {
+    byte[] result = new byte[targetLength];
+    if (copyLength > data.length) {
+      throw new RuntimeException("data out of length");
+    }
+    System.arraycopy(data, data.length - copyLength, result, result.length - copyLength,
+        copyLength);
+    return result;
+  }
+
+
+  /**
    * @param [data]
    * @return int
    * @author zhangzhenwei
@@ -88,7 +108,7 @@ public class BytesTools {
    * @since: 1.0.0
    */
   public static int bytesToInt(byte[] data) {
-    return ByteBuffer.wrap(data).getInt();
+    return ByteBuffer.wrap(copyTo(data, 4, data.length)).getInt();
   }
 
   /**
