@@ -2,6 +2,7 @@ package com.github.wegoo.bytes.tools;
 
 import java.nio.ByteBuffer;
 import java.util.Base64;
+import java.util.Locale;
 import sun.security.util.ByteArrays;
 
 /**
@@ -176,7 +177,7 @@ public class BytesTools {
       }
       sb.append(hex);
     }
-    return sb.toString();
+    return sb.toString().toUpperCase(Locale.ROOT);
   }
 
   /**
