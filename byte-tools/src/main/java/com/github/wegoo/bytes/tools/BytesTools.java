@@ -70,6 +70,15 @@ public class BytesTools {
   }
 
 
+  /**
+   * @author wegoo
+   * @description split 拆分数组
+   * @param [data, from, length]
+   *       原始数据，从第几个字节开始，结果长度
+   * @return byte[]
+   * @date 2023/7/14  16:36
+   * @since: 1.0.0
+   */
   public static byte[] split(byte[] data, int from, int length) {
     if (data == null || from + length > data.length) {
       throw new RuntimeException("input params error");
