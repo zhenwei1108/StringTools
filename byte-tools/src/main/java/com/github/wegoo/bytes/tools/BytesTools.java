@@ -6,7 +6,7 @@ import java.util.Locale;
 import sun.security.util.ByteArrays;
 
 /**
- * @author: zhangzhenwei
+ * @author: wegoo
  * @description:
  * @date: 2023/5/16  09:00
  * @since: 1.0.0
@@ -16,7 +16,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return byte[]
-   * @author zhangzhenwei
+   * @author wegoo
    * @description merge 合并byte数组 时间和内存，我选时间
    * @date 2023/5/16  09:10
    * @since: 1.0.0
@@ -38,7 +38,7 @@ public class BytesTools {
   /**
    * @param [data, length]
    * @return byte[]
-   * @author zhangzhenwei
+   * @author wegoo
    * @description splitPrefix 从前面 截取 指定长度
    * @date 2023/7/9  13:30
    * @since: 1.0.1
@@ -55,7 +55,7 @@ public class BytesTools {
   /**
    * @param [data, length]
    * @return byte[]
-   * @author zhangzhenwei
+   * @author wegoo
    * @description splitSuffix 从后面截取指定长度
    * @date 2023/7/9  13:30
    * @since: 1.0.1
@@ -84,7 +84,7 @@ public class BytesTools {
    * @param [data, targetLength, copyLength]
    *       待处理数据， 目标数组长度， 拷贝字节数量
    * @return byte[]
-   * @author zhangzhenwei
+   * @author wegoo
    * @description copyTo 将数字转换为指定长度
    * @date 2023/7/10  17:48
    * @since: 1.0.0
@@ -103,7 +103,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return int
-   * @author zhangzhenwei
+   * @author wegoo
    * @description bytesToInt 字节数组转 数字
    * @date 2023/7/10  10:07
    * @since: 1.0.0
@@ -115,7 +115,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return byte[]
-   * @author zhangzhenwei
+   * @author wegoo
    * @description intToBytes 数字转字节数组
    * @date 2023/7/10  10:08
    * @since: 1.0.0
@@ -127,7 +127,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return long
-   * @author zhangzhenwei
+   * @author wegoo
    * @description bytesToLong 字节数组转长数
    * @date 2023/7/10  10:08
    * @since: 1.0.0
@@ -139,7 +139,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return byte[]
-   * @author zhangzhenwei
+   * @author wegoo
    * @description longToBytes 长数转字节数组
    * @date 2023/7/10  10:08
    * @since: 1.0.0
@@ -151,7 +151,7 @@ public class BytesTools {
   /**
    * @param [source, target]
    * @return boolean
-   * @author zhangzhenwei
+   * @author wegoo
    * @description isEquals 比对两个字节数组是否一致
    * @date 2023/7/10  10:22
    * @since: 1.0.0
@@ -163,7 +163,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return java.lang.String
-   * @author zhangzhenwei
+   * @author wegoo
    * @description bytesToHex 字节数组转hex字符串
    * @date 2023/7/10  11:17
    * @since: 1.0.0
@@ -183,7 +183,7 @@ public class BytesTools {
   /**
    * @param [inHex]
    * @return byte[]
-   * @author zhangzhenwei
+   * @author wegoo
    * @description hexToBytes hex字符串转byte数组
    * @date 2023/7/10  11:16
    * @since: 1.0.0
@@ -211,7 +211,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return java.lang.String
-   * @author zhangzhenwei
+   * @author wegoo
    * @description bytesToBase64String 字节数组转base64
    * @date 2023/7/10  11:23
    * @since: 1.0.0
@@ -223,7 +223,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return byte[]
-   * @author zhangzhenwei
+   * @author wegoo
    * @description base64StringToBytes base64转字节数组
    * @date 2023/7/10  11:23
    * @since: 1.0.0
@@ -235,7 +235,7 @@ public class BytesTools {
   /**
    * @param [data]
    * @return boolean
-   * @author zhangzhenwei
+   * @author wegoo
    * @description isBase64 判断是否为base64编码 尝试解码，若解码失败，则认为非base64
    * @date 2023/7/10  13:19
    * @since: 1.0.0

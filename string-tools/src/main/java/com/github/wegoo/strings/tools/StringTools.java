@@ -1,7 +1,7 @@
 package com.github.wegoo.strings.tools;
 
 /**
- * @author: zhangzhenwei
+ * @author: wegoo
  * @description:
  * @date: 2023/5/8  10:16
  * @since: 1.0.0
@@ -9,7 +9,7 @@ package com.github.wegoo.strings.tools;
 public class StringTools {
 
   /**
-   * @author zhangzhenwei
+   * @author wegoo
    * @description isEmpty
    * @param [data]
    * @return boolean
@@ -26,7 +26,7 @@ public class StringTools {
   }
 
   /**
-   * @author zhangzhenwei
+   * @author wegoo
    * @description isBlank
    * 补充判断空串
    * @param [data]
@@ -48,7 +48,7 @@ public class StringTools {
   }
 
   /**
-   * @author zhangzhenwei
+   * @author wegoo
    * @description append  填充数据
    * @param [source, data]
    *         源数据， 待填充数据
